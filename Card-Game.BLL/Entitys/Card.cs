@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Card_Game.BLL.Entitys
 {
-    public enum IEffekte
-    {
-        Axtwurf,
-        Schildblock,
-        Pfeilregen,
-        Kavallerie_rufen,
-        Valküre
-    }
+    //public enum IEffekte
+    //{
+    //    Axtwurf,
+    //    Schildblock,
+    //    Pfeilregen,
+    //    Kavallerie_rufen,
+    //    Valküre
+    //}
     public class Card
     {
         [Key]
@@ -20,7 +20,7 @@ namespace Card_Game.BLL.Entitys
 
         public string Name { get; set; }
 
-        public List<IEffekte> Karteneffekt { get; set; }
+        //public ICollection<IEffekte> Karteneffekt { get; set; }
 
 
     }

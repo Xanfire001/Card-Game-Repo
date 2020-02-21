@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card-Game.ASP", "Card-Game.ASP\Card-Game.ASP.csproj", "{1D572933-FE35-42A2-90D1-C7F8572995B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.ASP", "Card-Game.ASP\Card-Game.ASP.csproj", "{1D572933-FE35-42A2-90D1-C7F8572995B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card-Game.BLL", "Card-Game.BLL\Card-Game.BLL.csproj", "{015702A8-2B8B-442A-BB52-E89F205FD619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.BLL", "Card-Game.BLL\Card-Game.BLL.csproj", "{015702A8-2B8B-442A-BB52-E89F205FD619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card-Game.DAL", "Card-Game.DAL\Card-Game.DAL.csproj", "{B082B49A-DA10-47A1-86F0-D78B48234242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.DAL", "Card-Game.DAL\Card-Game.DAL.csproj", "{B082B49A-DA10-47A1-86F0-D78B48234242}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.BLL.Tests", "Card-Game.BLL.Tests\Card-Game.BLL.Tests.csproj", "{7C83D05B-3969-48A5-A4B2-97F33CDFC258}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B082B49A-DA10-47A1-86F0-D78B48234242}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B082B49A-DA10-47A1-86F0-D78B48234242}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B082B49A-DA10-47A1-86F0-D78B48234242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C83D05B-3969-48A5-A4B2-97F33CDFC258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C83D05B-3969-48A5-A4B2-97F33CDFC258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C83D05B-3969-48A5-A4B2-97F33CDFC258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C83D05B-3969-48A5-A4B2-97F33CDFC258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

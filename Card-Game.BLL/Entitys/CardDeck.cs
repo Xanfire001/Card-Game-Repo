@@ -14,12 +14,12 @@ namespace Card_Game.BLL.Entitys
 
         public List<Card> CardList { get; set; }
 
-        public void AddCardToList()
+        public void AddCardToDeck()
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveCardFromList()
+        public void RemoveCardFromDeck()
         {
             throw new NotImplementedException();
         }

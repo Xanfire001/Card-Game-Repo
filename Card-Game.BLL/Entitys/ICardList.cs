@@ -11,9 +11,9 @@ namespace Card_Game.BLL.Entitys
         #endregion
 
         #region Methods
-        public void AddCardToList();
+        public void AddCardToDeck();
 
-        public void RemoveCardFromList();
+        public void RemoveCardFromDeck();
         #endregion
     }
 }

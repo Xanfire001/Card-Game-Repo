@@ -14,36 +14,44 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Card_Game.BLL.Tests
 {  
-    public class IntegrationTest
-    {
-        protected readonly HttpClient TestClient;
+    //public class IntegrationTest : IClassFixture<WebApplicationFactory<Card_Game.ASP.Startup>>
+    //{
+    //    private readonly WebApplicationFactory<Card_Game.ASP.Startup> _factory;
 
-        protected IntegrationTest()
-        {
-            var appFactory = new WebApplicationFactory<Startup>();
-                //.WithWebHostBuilder(builder => 
-                //{
-                //    builder.ConfigureServices(services =>
-                //    {
-                //        services.RemoveAll(typeof(DatabaseContext));
-                //        services.AddDbContext<DatabaseContext>(options =>
-                //        {
-                            
-                //        });
-                //    });
-                //});
-            TestClient = appFactory.CreateClient();
-        }
+    //    protected IntegrationTest(WebApplicationFactory<Card_Game.ASP.Startup> factory)
+    //    {
+    //        _factory = factory;
+            
+    //    }
 
-        [Fact]
-        public async Task AuthenticateAsync()
-        {
-            var response = await TestClient.GetAsync("/counter/SampleMethod");
-        }
+    //    public async Task Get_TestName(string url)
+    //    {
+    //        //Arrange
+    //        var client = _factory.CreateClient();
+
+    //    }
+
+        //[Fact]
+        //public async Task AuthenticateAsync()
+        //{
+        //    var appFactory = new WebApplicationFactory<Startup>();
+        //    //.WithWebHostBuilder(builder => 
+        //    //{
+        //    //    builder.ConfigureServices(services =>
+        //    //    {
+        //    //        services.RemoveAll(typeof(DatabaseContext));
+        //    //        services.AddDbContext<DatabaseContext>(options =>
+        //    //        {
+
+        //    //        });
+        //    //    });
+        //    //});
+        //    TestClient = appFactory.CreateClient();
+        //}
 
         //private async Task<string> GetJwtAsync()
         //{
 
         //}
-    }
+    //}
 }

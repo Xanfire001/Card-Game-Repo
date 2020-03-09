@@ -10,11 +10,12 @@ namespace Card_Game.DAL
 {
     public class DatabaseContext : IdentityDbContext<IdentityUser>
     {
+        public DbSet<Card> Card { get; set; }
         public DbSet<CardDeck> CardDeck { get; set; }
+
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace Card_Game.BLL.Tests
 {
-    public class CounterViewModelTests : IntegrationTest
-    {
-        public async Task SampleMethod_xxx_xxx()
-        {
-            //Arrange
+    //public class CounterViewModelTests : IntegrationTest
+    //{
+    //    public async Task SampleMethod_xxx_xxx()
+    //    {
+    //        //Arrange
             
-            //Act
+    //        //Act
 
-            //Assert
-        }
-    }
+    //        //Assert
+    //    }
+    //}
 }

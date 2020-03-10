@@ -1,4 +1,4 @@
-﻿using Card_Game.BLL.Entitys;
+﻿using Card_Game.BLL;
 using Card_Game.DAL;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +14,11 @@ namespace Card_Game.ASP.Pages
     {
         [Inject]
         public DatabaseContext _db { get; set; }
+
+        [Inject]
+        private ICardDeckRepo CardDeckRepo { get; set; }
+
+        private bool a = false;
         public IndexBase()
         {
         }
@@ -21,19 +26,25 @@ namespace Card_Game.ASP.Pages
         protected override void OnInitialized()
         {
             LoadSampleData();
-            
+
             base.OnInitialized();
         }
 
         private void LoadSampleData()
         {
-            if (_db.CardDeck.Count() == 0)
-            {
-                string file = System.IO.File.ReadAllText("generated.json");
-                var cardDecks = JsonSerializer.Deserialize<List<CardDeck>>(file);
-                _db.AddRange(cardDecks);
-                _db.SaveChanges();
-            }
+
+            CardDeckRepo.CreateCardDeck("Wikinger");
+
+            string file = System.IO.File.ReadAllText("generated(Card).json");
+            var cards = JsonSerializer.Deserialize<List<Card>>(file);
+            //_db.Card.AddRange(cards);
+
+            //_db.SaveChanges();
+
+
+
+            CardDeckRepo.CreateCardDeck("Winkinger2", cards);
+
         }
 
     }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Card_Game.BLL.Entitys
+namespace Card_Game.BLL
 {
     //public enum IEffekte
     //{

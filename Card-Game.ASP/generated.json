@@ -3,13 +3,13 @@
     "Name": "WikingerRush",
     "CardList": [
       {
-        "Name": "Lagertha"
+        "Id": "1"
       },
       {
-        "Name": "Ragnar"
+        "Id": "3"
       },
       {
-        "Name": "Floki"
+        "Id": "2"
       }
     ]
   }

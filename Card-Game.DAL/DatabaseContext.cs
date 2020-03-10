@@ -1,4 +1,4 @@
-﻿using Card_Game.BLL.Entitys;
+﻿using Card_Game.BLL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,6 @@ namespace Card_Game.DAL
     {
         public DbSet<Card> Card { get; set; }
         public DbSet<CardDeck> CardDeck { get; set; }
-
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {

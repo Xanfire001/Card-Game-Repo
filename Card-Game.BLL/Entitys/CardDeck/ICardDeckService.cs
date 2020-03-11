@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Card_Game.BLL
 {
-    class ICardDeckService
+    public interface ICardDeckService
     {
+        void CreateCardDeck(string name);
+        void CreateCardDeck(string name, List<Card> cards);
     }
 }

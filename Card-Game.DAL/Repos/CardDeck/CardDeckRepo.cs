@@ -19,8 +19,6 @@ namespace Card_Game.DAL
             Db.SaveChanges();
         }
 
-
-
         public void CreateCardDeck(string name, List<BLL.Card> cards)
         {
             var cardDeck = new CardDeck(name, cards);

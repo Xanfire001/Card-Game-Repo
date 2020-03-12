@@ -13,13 +13,14 @@ namespace Card_Game.DAL
         public DbSet<Card> Card { get; set; }
         public DbSet<CardDeck> CardDeck { get; set; }
 
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) :base(options)
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=CardGame;Trusted_Connection=True;MultipleActiveResultSets=true");
+        //    base.OnConfiguring(optionsBuilder);
+        //}
     }
 }

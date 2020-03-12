@@ -15,6 +15,9 @@ namespace Card_Game.ASP.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
+                services.AddDbContext<DatabaseContext>(options =>
+                    options.UseSqlServer(
+                        context.Configuration.GetConnectionString("DefaultConnection")));
             });
         }
     }

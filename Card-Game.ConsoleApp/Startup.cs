@@ -7,41 +7,50 @@ using System.Text;
 using Card_Game.BLL;
 using Microsoft.Extensions.Configuration;
 using Serilog;
+using Autofac;
+using Card_Game.DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace Card_Game.ConsoleApp
 {
-    public class Startup
+    public static class Startup
     {
-        public Startup()
-        {
-        }
-
-        public void Run()
+        public static IContainer Configure()
         {
             ConfigureLogging();
-            var services = ConfigureServices();
-            var serviceProvider = services.BuildServiceProvider();
-            serviceProvider.GetService<Controller>().Run();
-        }
 
-        private static IServiceCollection ConfigureServices()
-        {
-            IServiceCollection services = new ServiceCollection();
+            //Configuring Services
+            Log.Logger.Information("Starting to configure Services...");
+            var builder = new ContainerBuilder();
+            builder.RegisterType<Controller>().As<IController>();
+            builder.RegisterType<CardDeckService>().As<ICardDeckService>();
+            builder.RegisterType<CardDeckRepo>().As<ICardDeckRepo>();
 
-            services.AddTransient<ICardDeckService, CardDeckService>();
-            
-            services.AddTransient<Controller>();
+            //Instantiating Database
+            builder.Register(c =>
+            {
+                var opt = new DbContextOptionsBuilder<DatabaseContext>();
+                opt.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=aspnet-Card-Game.ASP-DAEA33CE-8CAF-408B-B1A7-93F83AD60EE2;Trusted_Connection=True;MultipleActiveResultSets=true");
+                return new DatabaseContext(opt.Options);
+            }).AsSelf();
 
-            return services;
+            //Return container with configured Services for using.
+            return builder.Build();
         }
 
         public static void ConfigureLogging()
         {
+
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json").SetBasePath("C:/Users/ac.HSGMBH/source/repos/Card-Game/Card-Game.ConsoleApp/")
+                .Build();
+
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .WriteTo.Console()
-                .WriteTo.File("logs\\cardGameLogs.txt", rollingInterval: RollingInterval.Day)
+                .ReadFrom.Configuration(configuration)
+                //.WriteTo.File("logs\\cardGameLogs.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+
+            Log.Logger.Information("Logger has been initialized");
         }
     }
 }

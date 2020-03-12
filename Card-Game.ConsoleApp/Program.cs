@@ -5,15 +5,34 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
+using Autofac;
 
 namespace Card_Game.ConsoleApp
 {
     public class Program
     {
-        public static Startup Startup = new Startup();
         static void Main(string[] args)
         {
-            Startup.Run();
+            try
+            {
+                var container = Startup.Configure();
+                Log.Logger.Information("Service configuration done.");
+                Log.Logger.Information("Starting application...");
+                using (var scope = container.BeginLifetimeScope())
+                {
+                    var app = scope.Resolve<IController>();
+                    app.Run();
+                }
+            }
+            catch(Exception ex)
+            {
+                Log.Logger.Fatal(ex, "Application failed to start correctly");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+            Console.ReadLine();
         }
 
         

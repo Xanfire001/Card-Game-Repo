@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 using Card_Game.BLL;
+using Microsoft.EntityFrameworkCore;
 
 namespace Card_Game.DAL
 {
     public class CardDeckRepo : ICardDeckRepo
     {
-        public DatabaseContext Db { get; set; }
         public CardDeckRepo(DatabaseContext db)
         {
             Db = db;
         }
+
+        public DatabaseContext Db { get; }
+
         public void CreateCardDeck(string name)
         {
             var cardDeck = new CardDeck(name);

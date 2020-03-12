@@ -9,7 +9,7 @@ using Serilog;
 
 namespace Card_Game.ConsoleApp
 {
-    public class Controller
+    public class Controller : IController
     {
         #region Properties
         private readonly ICardDeckService _cardDeckService;
@@ -22,8 +22,8 @@ namespace Card_Game.ConsoleApp
 
         public void Run()
         {
+            Log.Logger.Information("Application successfully started");
             _cardDeckService.CreateCardDeck("Wikinger");
-            Log.Information("test");
         }
     }
 }

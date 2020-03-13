@@ -8,5 +8,6 @@ namespace Card_Game.BLL
     {
         void CreateCardDeck(string name);
         void CreateCardDeck(string name, List<Card> cards);
+        List<CardDeck> GetAllCardDecks();
     }
 }

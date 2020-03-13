@@ -11,13 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.DAL", "Card-Game.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.BLL.Tests", "Card-Game.BLL.Tests\Card-Game.BLL.Tests.csproj", "{7C83D05B-3969-48A5-A4B2-97F33CDFC258}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card-Game.ConsoleApp", "Card-Game.ConsoleApp\Card-Game.ConsoleApp.csproj", "{6DA70DA0-3232-41E7-B413-B0281A904D7A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsLibrary", "ExceptionsLibrary\ExceptionsLibrary.csproj", "{AEF36378-606C-4EE3-B348-A54FE6DB31BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.ConsoleApp", "Card-Game.ConsoleApp\Card-Game.ConsoleApp.csproj", "{6DA70DA0-3232-41E7-B413-B0281A904D7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{05F507EC-0F3E-41A8-A346-643D1E7A668D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,19 +41,13 @@ Global
 		{6DA70DA0-3232-41E7-B413-B0281A904D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA70DA0-3232-41E7-B413-B0281A904D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA70DA0-3232-41E7-B413-B0281A904D7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEF36378-606C-4EE3-B348-A54FE6DB31BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEF36378-606C-4EE3-B348-A54FE6DB31BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEF36378-606C-4EE3-B348-A54FE6DB31BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEF36378-606C-4EE3-B348-A54FE6DB31BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1D572933-FE35-42A2-90D1-C7F8572995B8} = {B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}
-		{6DA70DA0-3232-41E7-B413-B0281A904D7A} = {05F507EC-0F3E-41A8-A346-643D1E7A668D}
-		{AEF36378-606C-4EE3-B348-A54FE6DB31BE} = {05F507EC-0F3E-41A8-A346-643D1E7A668D}
-		{05F507EC-0F3E-41A8-A346-643D1E7A668D} = {B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}
+		{6DA70DA0-3232-41E7-B413-B0281A904D7A} = {B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A1B506C-406B-45B2-AAB0-A8B8FC9E2CC9}

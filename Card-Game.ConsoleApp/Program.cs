@@ -16,11 +16,11 @@ namespace Card_Game.ConsoleApp
             try
             {
                 var container = Startup.Configure();
-                Log.Logger.Information("Service configuration done.");
                 Log.Logger.Information("Starting application...");
                 using (var scope = container.BeginLifetimeScope())
                 {
-                    var app = scope.Resolve<IController>();
+                    var app = scope.Resolve<Controller>();
+                    Log.Logger.Information("Application successfully started");
                     app.Run();
                 }
             }
@@ -32,11 +32,6 @@ namespace Card_Game.ConsoleApp
             {
                 Log.CloseAndFlush();
             }
-            Console.ReadLine();
         }
-
-        
-
-        
     }
 }

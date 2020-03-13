@@ -22,25 +22,25 @@ namespace Card_Game.ConsoleApp
             //Configuring Services
             Log.Logger.Information("Starting to configure Services...");
             var builder = new ContainerBuilder();
-            builder.RegisterType<Controller>().As<IController>();
+            builder.RegisterType<Controller>().AsSelf();
             builder.RegisterType<CardDeckService>().As<ICardDeckService>();
             builder.RegisterType<CardDeckRepo>().As<ICardDeckRepo>();
-
+            builder.RegisterType<ConsoleContext>().AsSelf();
             //Instantiating Database
             builder.Register(c =>
             {
-                var opt = new DbContextOptionsBuilder<DatabaseContext>();
-                opt.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=aspnet-Card-Game.ASP-DAEA33CE-8CAF-408B-B1A7-93F83AD60EE2;Trusted_Connection=True;MultipleActiveResultSets=true");
-                return new DatabaseContext(opt.Options);
+                var opt = new DbContextOptionsBuilder<ConsoleContext>();
+                opt.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Card-Game-Console;Trusted_Connection=True;MultipleActiveResultSets=true");
+                return new ConsoleContext(opt.Options);
             }).AsSelf();
 
             //Return container with configured Services for using.
+            Log.Logger.Information("Service configuration done.");
             return builder.Build();
         }
 
         public static void ConfigureLogging()
         {
-
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json").SetBasePath("C:/Users/ac.HSGMBH/source/repos/Card-Game/Card-Game.ConsoleApp/")
                 .Build();

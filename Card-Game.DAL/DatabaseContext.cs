@@ -19,7 +19,7 @@ namespace Card_Game.DAL
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
-        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=CardGame;Trusted_Connection=True;MultipleActiveResultSets=true");
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=aspnet-Card-Game.ASP-DAEA33CE-8CAF-408B-B1A7-93F83AD60EE2;Trusted_Connection=True;MultipleActiveResultSets=true");
         //    base.OnConfiguring(optionsBuilder);
         //}
     }

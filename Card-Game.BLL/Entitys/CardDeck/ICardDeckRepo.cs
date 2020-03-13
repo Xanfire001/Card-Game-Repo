@@ -7,9 +7,9 @@ namespace Card_Game.BLL
 {
     public interface ICardDeckRepo
     {
-        public void CreateCardDeck(string name);
-        public void CreateCardDeck(string name, List<Card> cards);
-
-
+        void CreateCardDeck(string name);
+        void CreateCardDeck(string name, List<Card> cards);
+        void DeleteCardDeck(int id);
+        List<CardDeck> GetAllCardDecks();
     }
 }

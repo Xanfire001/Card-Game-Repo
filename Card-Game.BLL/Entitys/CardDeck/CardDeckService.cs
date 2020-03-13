@@ -16,16 +16,31 @@ namespace Card_Game.BLL
         public void CreateCardDeck(string name)
         {
             //Backend Validiation kann z.B hier durchgeführt werden
-
-            cardDeckRepo.CreateCardDeck(name);
+            try
+            {
+                cardDeckRepo.CreateCardDeck(name);
+            }
+            catch
+            {
+                throw;
+            }
         }
-
 
         public void CreateCardDeck(string name, List<Card> cards)
         {
             //Backend Validiation kann z.B hier durchgeführt werden
 
             cardDeckRepo.CreateCardDeck(name, cards);
+        }
+
+        public void DeleteCardDeck(int id)
+        {
+            cardDeckRepo.DeleteCardDeck(id);
+        }
+
+        public List<CardDeck> GetAllCardDecks()
+        {
+            return cardDeckRepo.GetAllCardDecks();
         }
     }
 }

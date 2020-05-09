@@ -9,4 +9,4 @@ jobs:
        name: win/default
      steps:
        - checkout
-       - run: build
+       - run: dotnet build

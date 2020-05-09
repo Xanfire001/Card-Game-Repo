@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Card_Game.BLL;
 using Card_Game.ConsoleApp.Views;
 using Serilog;
-using UnityEngine;
 
 namespace Card_Game.ConsoleApp
 {

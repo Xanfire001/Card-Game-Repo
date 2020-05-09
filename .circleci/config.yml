@@ -10,4 +10,6 @@ jobs:
      steps:
        - checkout
        - run: dotnet build
-       - run: dotnet test C:\Users\alexw\source\repos\Card-Game-Repo\Card-Game.sln -r C:\test-results
+       - run: dotnet test -r C:\Users\alexw\source\repos\Card-Game-Repo\test-results
+       - store_test_results:
+            path: ~/test-results

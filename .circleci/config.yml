@@ -9,7 +9,7 @@ jobs:
        name: win/default
      steps:
        - checkout
-       - run: md C:\test-results
-       - run: dotnet test ./Inventar-Verwaltung/Inventar-Verwaltung.sln -r C:\test-results
+       - run: dotnet build
+       - run: dotnet test -r C:\Users\alexw\source\repos\Card-Game-Repo\test-results
        - store_test_results:
-            path: /test-results
+            path: ~/test-results

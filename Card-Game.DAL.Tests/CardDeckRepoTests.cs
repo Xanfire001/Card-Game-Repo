@@ -29,7 +29,7 @@ namespace Card_Game.DAL.Tests
                 cls.AddCardToCardList(card, deck);
 
                 mock.Mock<ConsoleContext>()
-                    .Verify(x => x.SaveChanges(), Times.Exactly(1));
+                    .Verify(x => x.SaveChanges(), Times.Exactly(1))
 
                 Assert.True(deck.CardList.Count == 1);
                 Assert.Equal(card.Name, deck.CardList[0].Name);

@@ -10,6 +10,6 @@ jobs:
      steps:
        - checkout
        - run: md C:\test-results
-       - run: dotnet test ./Card-Game-Repo/Card-Game.sln -r C:\test-results
+       - run: dotnet test ./Inventar-Verwaltung/Inventar-Verwaltung.sln -r C:\test-results
        - store_test_results:
             path: /test-results

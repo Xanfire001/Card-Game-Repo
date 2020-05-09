@@ -10,4 +10,4 @@ jobs:
      steps:
        - checkout
        - run: dotnet build
-       - run: dotnet test .\Card-Game-Repo\ -r C:\test-results
+       - run: dotnet test .\Card-Game-Repo\Card-Game.sln -r C:\test-results

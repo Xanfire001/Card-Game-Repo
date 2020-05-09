@@ -22,6 +22,11 @@ namespace Card_Game.BLL
 
         //public ICollection<IEffekte> Karteneffekt { get; set; }
 
+        public Card() { }
 
+        public Card(string name)
+        {
+            Name = name;
+        }
     }
 }

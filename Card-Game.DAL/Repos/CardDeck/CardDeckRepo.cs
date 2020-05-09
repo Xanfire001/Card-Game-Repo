@@ -11,12 +11,11 @@ namespace Card_Game.DAL
 {
     public class CardDeckRepo : ICardDeckRepo
     {
+        public ConsoleContext Db { get; }
         public CardDeckRepo(ConsoleContext db)
         {
             Db = db;
         }
-
-        public ConsoleContext Db { get; }
 
         public void CreateCardDeck(string name)
         {
@@ -26,7 +25,7 @@ namespace Card_Game.DAL
                 Db.CardDeck.Add(cardDeck);
                 Db.SaveChanges();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -40,28 +39,110 @@ namespace Card_Game.DAL
                 Db.CardDeck.Add(cardDeck);
                 Db.SaveChanges();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
         }
-        
+
         public void DeleteCardDeck(int id)
         {
-            Db.CardDeck
-                .Where(s => s.Id == id)
-                .Include(s => s.CardList)
-                .FirstOrDefault();
+            try
+            {
+                CardDeck deckToDelete = SearchDeck(id);
+                Db.CardDeck.Remove(deckToDelete);
+                Db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private CardDeck SearchDeck(int id)
+        {
+            try
+            {
+                return Db.CardDeck
+                        .Where(s => s.Id == id)
+                        .Include(s => s.CardList)
+                        .FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<CardDeck> GetAllCardDecks()
         {
-            List<CardDeck> decklist = new List<CardDeck>();
-            foreach(var deck in Db.CardDeck)
+            try
             {
-                decklist.Add(deck);
+                List<CardDeck> decklist = new List<CardDeck>();
+                foreach (var deck in Db.CardDeck)
+                {
+                    decklist.Add(deck);
+                }
+                return decklist;
             }
-            return decklist;
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public List<Card> GetAllCardsInDeck(int id)
+        {
+            try
+            {
+                CardDeck deckToSelect = SearchDeck(id);
+                return deckToSelect.CardList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void AddCardToDeck(Card card, int deckID)
+        {
+            try
+            {
+                var deck = SearchDeck(deckID);
+                AddCardToCardList(AddNewCard(card), deck);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void AddCardToCardList(Card card, CardDeck deck)
+        {
+            try
+            {
+                deck.CardList.Add(card);
+                Db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public Card AddNewCard(Card card)
+        {
+            try
+            {
+                Card copyCard = new Card(card.Name);
+                Db.Add(copyCard);
+                Db.SaveChanges();
+                return copyCard;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

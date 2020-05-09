@@ -17,4 +17,10 @@
     <ProjectReference Include="..\Card-Game.BLL\Card-Game.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Program Files\Unity\Hub\Editor\2019.3.5f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

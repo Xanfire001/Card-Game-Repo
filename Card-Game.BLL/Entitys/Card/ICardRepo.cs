@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Card_Game.BLL
 {
-    class ICardRepo
+    public interface ICardRepo
     {
+        List<Card> GetAllCards();
     }
 }

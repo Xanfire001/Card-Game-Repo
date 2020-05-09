@@ -11,7 +11,7 @@ namespace Card_Game.DAL
     public class ConsoleContext : DbContext
     {
         public DbSet<Card> Card { get; set; }
-        public DbSet<CardDeck> CardDeck { get; set; }
+        public DbSet<CardDeck> CardDeck { get; set; }     
 
         public ConsoleContext()
         {

@@ -1,15 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
-using System.Collections.Generic;
-using System.Text;
-using Card_Game.BLL;
+﻿using Card_Game.BLL;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 using Autofac;
 using Card_Game.DAL;
 using Microsoft.EntityFrameworkCore;
+using Card_Game.ConsoleApp.Views;
 
 namespace Card_Game.ConsoleApp
 {
@@ -18,14 +13,17 @@ namespace Card_Game.ConsoleApp
         public static IContainer Configure()
         {
             ConfigureLogging();
-
+            
             //Configuring Services
             Log.Logger.Information("Starting to configure Services...");
             var builder = new ContainerBuilder();
             builder.RegisterType<Controller>().AsSelf();
+            builder.RegisterType<CardService>().As<ICardService>();
+            builder.RegisterType<CardRepo>().As<ICardRepo>();
             builder.RegisterType<CardDeckService>().As<ICardDeckService>();
             builder.RegisterType<CardDeckRepo>().As<ICardDeckRepo>();
             builder.RegisterType<ConsoleContext>().AsSelf();
+            builder.RegisterType<Ui>().AsSelf();
             //Instantiating Database
             builder.Register(c =>
             {
@@ -42,7 +40,7 @@ namespace Card_Game.ConsoleApp
         public static void ConfigureLogging()
         {
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json").SetBasePath("C:/Users/ac.HSGMBH/source/repos/Card-Game/Card-Game.ConsoleApp/")
+                .AddJsonFile("appsettings.json").SetBasePath("C:/Users/alexw/source/repos/Card-Game-Repo/Card-Game.ConsoleApp/")
                 .Build();
 
             Log.Logger = new LoggerConfiguration()

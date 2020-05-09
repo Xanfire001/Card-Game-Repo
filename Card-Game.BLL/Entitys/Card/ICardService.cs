@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Card_Game.BLL
 {
-    class ICardService
+    public interface ICardService
     {
+        List<Card> GetAllCards();
     }
 }

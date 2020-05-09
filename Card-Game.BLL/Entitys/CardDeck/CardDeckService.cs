@@ -13,6 +13,12 @@ namespace Card_Game.BLL
             this.cardDeckRepo = cardDeckRepo;
         }
 
+        public void Huhu()
+        {
+            cardDeckRepo.CreateCardDeck("Worked");
+        }
+
+
         public void CreateCardDeck(string name)
         {
             //Backend Validiation kann z.B hier durchgeführt werden
@@ -41,6 +47,16 @@ namespace Card_Game.BLL
         public List<CardDeck> GetAllCardDecks()
         {
             return cardDeckRepo.GetAllCardDecks();
+        }
+
+        public List<Card> GetAllCardsInDeck(int id)
+        {
+            return cardDeckRepo.GetAllCardsInDeck(id);
+        }
+
+        public void AddCardToDeck(Card card, int deckID)
+        {
+            cardDeckRepo.AddCardToDeck(card, deckID);
         }
     }
 }

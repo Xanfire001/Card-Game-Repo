@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
-namespace ExceptionsLibrary
+namespace UnityConnection
 {
-    public class Code
+    public class UnityDataTransfer
     {
-
     }
 }

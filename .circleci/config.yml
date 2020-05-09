@@ -10,6 +10,6 @@ jobs:
      steps:
        - checkout
        - run: dotnet build
-       - run: dotnet test
+       - run: dotnet test -r C:\Users\circleci\project\test-results
        - store_test_results:
             path: ~/test-results

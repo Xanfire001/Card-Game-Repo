@@ -12,7 +12,6 @@ namespace Card_Game.ConsoleApp
         private readonly ICardService _cardService;
         #region Properties
         private Ui Ui { get; set; }
-
         #endregion
         public Controller(ICardDeckService cardDeckService, ICardService cardService, Ui ui)
         {

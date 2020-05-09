@@ -39,13 +39,14 @@ namespace Card_Game.ConsoleApp
 
         public static void ConfigureLogging()
         {
+            Log.Logger.Information("Initializing Logger");
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json").SetBasePath("C:/Users/alexw/source/repos/Card-Game-Repo/Card-Game.ConsoleApp/")
                 .Build();
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(configuration)
-                //.WriteTo.File("logs\\cardGameLogs.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.File("logs\\cardGameLogs.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             Log.Logger.Information("Logger has been initialized");

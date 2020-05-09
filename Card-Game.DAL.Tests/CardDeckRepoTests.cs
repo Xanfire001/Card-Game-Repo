@@ -17,7 +17,6 @@ namespace Card_Game.DAL.Tests
         {
             using (var mock = AutoMock.GetLoose())
             {
-                
                 List<Card> test = new List<Card>();
                 CardDeck deck = new CardDeck("TestDeck", test);
                 Card card = new Card("testCard");

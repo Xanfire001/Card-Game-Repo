@@ -10,6 +10,13 @@ jobs:
      steps:
        - checkout
        - run: dotnet build
+       
+            
+   test:
+     executor:
+       name: win/default
+     steps:
+       - checkout
        - run: dotnet test -r C:\Users\alexw\source\repos\Card-Game-Repo\test-results
        - store_test_results:
             path: ~/test-results

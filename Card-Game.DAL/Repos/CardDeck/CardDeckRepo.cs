@@ -49,7 +49,7 @@ namespace Card_Game.DAL
         {
             try
             {
-                CardDeck deckToDelete = SearchDeck(id);
+                CardDeck deckToDelete = GetDeck(id);
                 Db.CardDeck.Remove(deckToDelete);
                 Db.SaveChanges();
             }

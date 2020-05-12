@@ -9,9 +9,7 @@ jobs:
        name: win/default
      steps:
        - checkout
-       - run: dotnet build
-       
-            
+       - run: dotnet build           
    test:
      executor:
        name: win/default

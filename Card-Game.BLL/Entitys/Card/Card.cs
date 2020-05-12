@@ -28,5 +28,6 @@ namespace Card_Game.BLL
         {
             Name = name;
         }
+
     }
 }

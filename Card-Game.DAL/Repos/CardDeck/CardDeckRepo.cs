@@ -59,7 +59,7 @@ namespace Card_Game.DAL
             }
         }
 
-        private CardDeck SearchDeck(int id)
+        public CardDeck GetDeck(int id)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace Card_Game.DAL
         {
             try
             {
-                CardDeck deckToSelect = SearchDeck(id);
+                CardDeck deckToSelect = GetDeck(id);
                 return deckToSelect.CardList;
             }
             catch (Exception)
@@ -108,7 +108,7 @@ namespace Card_Game.DAL
         {
             try
             {
-                var deck = SearchDeck(deckID);
+                var deck = GetDeck(deckID);
                 AddCardToCardList(AddNewCard(card), deck);
             }
             catch (Exception)

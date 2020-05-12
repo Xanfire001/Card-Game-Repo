@@ -41,5 +41,11 @@ namespace Card_Game.DAL.Tests
         {
             //Beispiel zum implementieren
         }
+
+        [Fact]
+        public void GetDeck_ShouldWork()
+        {
+
+        }
     }
 }

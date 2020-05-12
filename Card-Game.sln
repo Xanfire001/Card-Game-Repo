@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Card-Game.DAL.Tests", "Card-Game.DAL.Tests\Card-Game.DAL.Tests.csproj", "{E5E99AC7-6C9C-4FC1-9A88-B6400AF85C8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Card-Game.ConsoleApp.Tests", "Card-Game.ConsoleApp.Tests\Card-Game.ConsoleApp.Tests.csproj", "{AB73D7DA-B862-4739-838A-5EC43C74BA05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C5CB7C47-5CFD-47D0-ACB2-57F17C1DA40F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{E5E99AC7-6C9C-4FC1-9A88-B6400AF85C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E99AC7-6C9C-4FC1-9A88-B6400AF85C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E99AC7-6C9C-4FC1-9A88-B6400AF85C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB73D7DA-B862-4739-838A-5EC43C74BA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB73D7DA-B862-4739-838A-5EC43C74BA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB73D7DA-B862-4739-838A-5EC43C74BA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB73D7DA-B862-4739-838A-5EC43C74BA05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1D572933-FE35-42A2-90D1-C7F8572995B8} = {B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}
 		{6DA70DA0-3232-41E7-B413-B0281A904D7A} = {B2BE7DE6-95E8-4F69-B973-E08C31FC4A17}
+		{E5E99AC7-6C9C-4FC1-9A88-B6400AF85C8B} = {C5CB7C47-5CFD-47D0-ACB2-57F17C1DA40F}
+		{AB73D7DA-B862-4739-838A-5EC43C74BA05} = {C5CB7C47-5CFD-47D0-ACB2-57F17C1DA40F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A1B506C-406B-45B2-AAB0-A8B8FC9E2CC9}

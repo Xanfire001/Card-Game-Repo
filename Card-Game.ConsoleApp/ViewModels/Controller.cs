@@ -154,7 +154,7 @@ namespace Card_Game.ConsoleApp
             }
         }
 
-        private bool CheckInput(string input, List<CardDeck> cardDeckList)
+        public bool CheckInput(string input, List<CardDeck> cardDeckList)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace Card_Game.ConsoleApp
             }
         }
 
-        private bool CheckInput(string input, List<Card> cardList)
+        public bool CheckInput(string input, List<Card> cardList)
         {
             try
             {

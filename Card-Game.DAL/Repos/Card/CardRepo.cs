@@ -29,5 +29,20 @@ namespace Card_Game.DAL
             }
             return cardList;
         }
+
+        public Card AddNewCard(Card card)
+        {
+            try
+            {
+                Card copyCard = new Card(card.Name);
+                Db.Add(copyCard);
+                Db.SaveChanges();
+                return copyCard;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

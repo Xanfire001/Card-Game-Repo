@@ -18,3 +18,9 @@ jobs:
        - run: dotnet test -r C:\Users\alexw\source\repos\Card-Game-Repo\test-results
        - store_test_results:
             path: ~/test-results
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
+      - test

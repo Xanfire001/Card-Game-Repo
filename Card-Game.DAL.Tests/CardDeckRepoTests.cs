@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Autofac.Extras.Moq;
 using Moq;
+using Card_Game.BLL.Entitys;
 
 namespace Card_Game.DAL.Tests
 {
@@ -39,7 +40,6 @@ namespace Card_Game.DAL.Tests
         [Fact]
         public void AddNewCard_ShouldWork()
         {
-            //Beispiel zum implementieren
         }
 
         [Fact]

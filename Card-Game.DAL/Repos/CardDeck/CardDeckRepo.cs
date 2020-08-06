@@ -63,10 +63,13 @@ namespace Card_Game.DAL
         {
             try
             {
-                return Db.CardDeck
+
+                var temp = Db.CardDeck
                         .Where(s => s.Id == id)
                         .Include(s => s.CardList)
                         .FirstOrDefault();
+
+                return temp;
             }
             catch (Exception)
             {
